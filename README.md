@@ -46,7 +46,7 @@ My augmentingPath funtion utilizes Breadth-First Search to find a path between t
      - Adds to the `visited` set.
      - Updates the `parent` map.
      - Adds to the `queue`.
-  - The overall complexity of BFS loop: $O(V + E)$
+   - The overall complexity of BFS loop: $O(V + E)$
 5. The `path` is constructed from the `end` node to the `start` node. In the worst-case this involves traversing all $V$ nodes. Giving us a linear time.
 6. If a `path` is not found the function returns an empty list. Which takes constant time.
 

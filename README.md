@@ -32,3 +32,33 @@ accordingly.
 
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+## Answer 
+My augmentingPath funtion utilizes Breadth-First Search to find a path between two nodes in a graph. Looking at each seciton of the code we can determine the worst-case big $\Theta$ complexity of my implementation.
+
+1. Check if the `start` node is also the `end` node. This is constant time.
+2. Initialize the `queue`, `visited` set and `parent` map. This is constant time.
+3. Add the `start` node to the `visited` set. This is constant time.
+4. BFS Loop: The loop continues until the `queue` is empty. Total iterations = $O(V)$, $V$ is the number of nodes.
+   - Inner loop: Iterates through all neighbors of the `current` node.
+     - Each edge in the graph is processed exactly once.
+     - Checks if the `neighbor` has been visited.
+     - Adds to the `visited` set.
+     - Updates the `parent` map.
+     - Adds to the `queue`.
+  - The overall complexity of BFS loop: $O(V + E)$
+5. The `path` is constructed from the `end` node to the `start` node. In the worst-case this involves traversing all $V$ nodes. Giving us a linear time.
+6. If a `path` is not found the function returns an empty list. Which takes constant time.
+
+Taking the dominant term from the BFS section gives us the worst-case time complexity of $\Theta(V + E)$. 
+
+## Plagiarism Acknowledgement
+
+For this assignment I breifly reviewed the repository https://github.com/COSC3020/augmenting-path-IshitaPatel18 and https://hackernoon.com/a-beginners-guide-to-bfs-and-dfs-in-javascript. 
+
+“I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.”
+
+
